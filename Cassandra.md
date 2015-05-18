@@ -54,3 +54,7 @@
 
  - Fast writes - 
     Cassandra was designed to run on cheap commodity hardware. It performs blazingly fast writes and can store hundreds of terabytes of data, without sacrificing the read efficiency.
+
+```
+data => node => data center => cluster
+```
