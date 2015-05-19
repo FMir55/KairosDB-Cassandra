@@ -43,11 +43,16 @@ cqlsh> USE tutorialspoint;
 ```
 ALTER KEYSPACE <identifier> WITH <properties>
 ```
-Ex:
 ```
 ALTER KEYSPACE “KeySpace Name”
 ...WITH replication = {'class': ‘Strategy name’, 'replication_factor' : ‘No.Of  replicas’}
 ...(AND durable_writes = ‘Boolean value’);
+```
+Ex:
+```
+cqlsh> CREATE KEYSPACE tutorialspoint
+...WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3}
+...AND DURABLE_WRITES = false;
 ```
 ###Drop/Delete keyspace
 ```
