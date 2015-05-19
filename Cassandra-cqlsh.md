@@ -87,9 +87,7 @@ cqlsh:tutorialspoint> CREATE TABLE emp(
    emp_sal varint,
    emp_phone varint
    );
-```
-###verification
-```
+
 cqlsh:tutorialspoint> select * from emp;
 ```
 ###altering a table(ADD & DROP the columns)
@@ -104,9 +102,7 @@ cqlsh> USE tutorialspoint;
 cqlsh:tutorialspoint> ALTER TABLE emp
    ... ADD emp_email text,
    ... DROP emp_sal;
-```
-###verification
-```
+
 cqlsh:tutorialspoint> select * from emp;
 ```
 ###drop a table
@@ -117,9 +113,7 @@ Ex:
 ```
 cqlsh> USE tutorialspoint;
 cqlsh:tutorialspoint> DROP TABLE emp;
-```
-###verification
-```
+
 cqlsh:tutorialspoint> select * from emp;
 ```
 
@@ -132,9 +126,56 @@ Ex:
 ```
 cqlsh> USE tutorialspoint;
 cqlsh:tutorialspoint> TRUNCATE emp;
+
+cqlsh:tutorialspoint> select * from emp;
 ```
-###verification
+
+##Data
+###create data
+Ex:
+Assume the table emp contains the following columns:
+emp_id    emp_name   emp_city    emp_phone   emp_sal
 ```
+cqlsh:tutorialspoint> INSERT INTO emp (emp_id, emp_name, emp_city,
+   emp_phone, emp_sal) VALUES(1,'ram', 'Hyderabad', 9848022338, 50000);
+
+cqlsh:tutorialspoint> INSERT INTO emp (emp_id, emp_name, emp_city,
+   emp_phone, emp_sal) VALUES(2,'robin', 'Hyderabad', 9848022339, 40000);
+
+cqlsh:tutorialspoint> INSERT INTO emp (emp_id, emp_name, emp_city,
+   emp_phone, emp_sal) VALUES(3,'rahman', 'Chennai', 9848022330, 45000);
+
+cqlsh:tutorialspoint> select * from emp;
+```
+###update data
+修正table中特定column所表示的資料
+```
+UPDATE <tablename>
+SET <column name> = <new value>
+<column name> = <value>....
+WHERE <condition>
+```
+```
+cqlsh:tutorialspoint> UPDATE emp SET emp_city='Delhi',emp_sal=50000
+... WHERE emp_id=2;
+
+cqlsh:tutorialspoint> select * from emp;
+```
+
+###delete data
+```
+DELETE FROM <identifier> WHERE <condition>;
+```
+Ex:
+```
+cqlsh:tutorialspoint> DELETE emp_sal FROM emp WHERE emp_id=3;
+
+cqlsh:tutorialspoint> select * from emp;
+```
+###delete the entire row
+```
+cqlsh:tutorialspoint> DELETE FROM emp WHERE emp_id=3;
+
 cqlsh:tutorialspoint> select * from emp;
 ```
 
@@ -151,8 +192,8 @@ cqlsh:tutorialspoint> DROP INDEX name;
 ```
 
 ##BATCH
-植入、刪減TABLE內資料
-###creating/dropping a index
+append、刪減TABLE內資料
+###creating/dropping data
 ```
 BEGIN BATCH
 <insert-stmt>/ <update-stmt>/ <delete-stmt>
@@ -166,8 +207,16 @@ cqlsh:tutorialspoint> BEGIN BATCH
 ... UPDATE emp SET emp_sal = 50000 WHERE emp_id =3;
 ... DELETE emp_city FROM emp WHERE emp_id = 2;
 ... APPLY BATCH;
+
+cqlsh:tutorialspoint> select * from emp;
 ```
-###verification
+
+##verification
 ```
 cqlsh:tutorialspoint> select * from emp;
+```
+
+###verify the specific column
+```
+cqlsh:tutorialspoint> SELECT emp_name, emp_sal from emp;
 ```
