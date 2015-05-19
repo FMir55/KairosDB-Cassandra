@@ -50,7 +50,7 @@ ALTER KEYSPACE “KeySpace Name”
 ```
 Ex:
 ```
-cqlsh> CREATE KEYSPACE tutorialspoint
+cqlsh> ALTER KEYSPACE tutorialspoint
 ...WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3}
 ...AND DURABLE_WRITES = false;
 ```
