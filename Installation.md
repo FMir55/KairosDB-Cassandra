@@ -4,7 +4,7 @@
 http://www.erol.si/2015/02/how-to-install-kairosdb-timeseries-database/
 
 
-
+##Cassandra
 ###Preparation
 source setting
 ```
@@ -33,11 +33,13 @@ sudo apt-get update
 sudo apt-get install cassandra
 ```
 
-#Java
+###Install Java
 ```
-sudo apt-get install oracle-java8-installer
-or
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
 sudo apt-get install oracle-java7-installer
+sudo apt-get install oracle-java7-set-default
 ```
 
 
@@ -57,16 +59,16 @@ sudo service cassandra restart
 # KairosDB
 
 ###download & unpack
+- First of all,link to the website to check the latest version : x.x.x-x
+- https://github.com/kairosdb/kairosdb/releases
 ```
-wget https://github.com/kairosdb/kairosdb/releases/download/v0.9.5beta2/kairosdb-0.9.5-0.2beta.tar.gz
-ls
-tar -xzf kairosdb-0.9.5-0.2beta.tar.gz
+wget https://github.com/kairosdb/kairosdb/releases/download/vx.x.x/kairosdb_x.x.x-x_all.deb
+sudo dpkg -i kairosdb_x.x.x-x_all.deb
 ```
 
-###Enable Cassandra
+###Enable Cassandra as used DATABASE
 ```
-cd kairosdb/conf
-gedit kairosdb.properties
+gedit /opt/kairosdb/conf/kairosdb.properties
 comment out as:
                 #kairosdb.service.datastore=org.kairosdb.datastore.h2.H2Module
 uncomment as:
@@ -75,17 +77,19 @@ uncomment as:
 
 ### Start KairosDB
 ```
-cd ..
-cd bin
-ls
-sudo ./kairosdb.sh run 
+sudo ./bin/kairosdb.sh run 
 (first time)
 (this will run kairosdb in foreground)
 (use Ctrl + C to stop)
 
-OR
 sudo ./kairosdb.sh start (this will run kairosdb in background)
 sudo ./kairosdb.sh stop  (to stop kairosdb)
+```
+or
+```
+sudo service kairosdb start
+sudo service kairosdb stop
+sudo service kairosdb restart
 ```
 
 ### Using UI
