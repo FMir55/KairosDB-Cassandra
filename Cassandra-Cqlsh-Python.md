@@ -1,0 +1,43 @@
+#CQLSH Can Be Executed by Importing csv
+  - import csv
+  
+  https://github.com/FMir55/KairosDB-Cassandra/blob/master/CQLSH_CMD.py
+  
+However,only 'CQL' command can be used in this way:
+  ```
+ALTER KEYSPACE
+ALTER TABLE
+ALTER USER
+BATCH
+CREATE INDEX
+CREATE KEYSPACE
+CREATE TABLE
+CREATE USER
+DELETE
+DROP INDEX
+DROP KEYSPACE
+DROP TABLE
+DROP USER
+GRANT
+INSERT
+LIST PERMISSIONS
+LIST USERS
+REVOKE
+SELECT
+TRUNCATE
+UPDATE
+USE
+  ```
+    
+Note that 'cqlsh' command doesn't work:
+```
+ASSUME
+CAPTURE
+CONSISTENCY
+COPY
+DESCRIBE
+EXIT
+SHOW
+SOURCE
+TRACING
+```
