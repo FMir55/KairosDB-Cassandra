@@ -1,7 +1,9 @@
 # Install Cassandra & KairosDB
 - package install via apt-get
-- Reference 
+- Reference -
 http://www.erol.si/2015/02/how-to-install-kairosdb-timeseries-database/
+http://www.desmondrduggan.com/2014/09/11/How-to_Install-Cassandra.html
+https://snapwebsites.org/journal/2014/10/installation-instructions-get-cassandra-ubuntu
 
 
 ##Cassandra
