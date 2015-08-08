@@ -58,3 +58,6 @@
 ```
 data => node => data center => cluster
 ```
+
+- SOURCE:
+http://docs.datastax.com/en/cassandra/2.0/cassandra/gettingStartedCassandraIntro.html
