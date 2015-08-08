@@ -1,4 +1,4 @@
-#cqlsh
+#Cqlsh
 - (Cassandra query language shell)
 - define a schema
 - insert data
@@ -31,11 +31,11 @@ cqlsh> CREATE KEYSPACE tutorialspoint
 ...WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3}
 ...AND DURABLE_WRITES = false;
 ```
-###verify members of keyspaces
+###Verify members of keyspaces
 ```
 cqlsh> DESCRIBE keyspaces;
 ```
-###verification with details
+###Verification with details
 ```
 cqlsh> SELECT * FROM system.schema_keyspaces;
 ```
@@ -71,8 +71,8 @@ Ex:
 Drop KEYSPACE tutorialspoint;
 ```
 
-##table/columnfamilies
-###creating a table
+##Table/Columnfamilies
+###Creating a table
 ```
 CREATE TABLE tablename(
    column1 name datatype PRIMARYKEY,
@@ -93,7 +93,7 @@ cqlsh:tutorialspoint> CREATE TABLE emp(
 
 cqlsh:tutorialspoint> select * from emp;
 ```
-###altering a table(ADD & DROP the columns)
+###Altering a table(ADD & DROP the columns)
 ```
 ALTER TABLE table name
 ADD  new column datatype;
@@ -108,7 +108,7 @@ cqlsh:tutorialspoint> ALTER TABLE emp
 
 cqlsh:tutorialspoint> select * from emp;
 ```
-###drop a table
+###Drop a table
 ```
 DROP TABLE <tablename>
 ```
@@ -120,7 +120,7 @@ cqlsh:tutorialspoint> DROP TABLE emp;
 cqlsh:tutorialspoint> select * from emp;
 ```
 
-###truncate a table
+###Truncate a table
 清空table內所有column(n rows => 0 row)
 ```
 TRUNCATE TABLE <tablename>
@@ -134,7 +134,7 @@ cqlsh:tutorialspoint> select * from emp;
 ```
 
 ##Data
-###create data
+###Create data
 Ex:
 Assume the table emp contains the following columns:
 emp_id    emp_name   emp_city    emp_phone   emp_sal
@@ -150,7 +150,7 @@ cqlsh:tutorialspoint> INSERT INTO emp (emp_id, emp_name, emp_city,
 
 cqlsh:tutorialspoint> select * from emp;
 ```
-###update data
+###Update data
 修正table中特定column所表示的資料
 ```
 UPDATE <tablename>
@@ -165,7 +165,7 @@ cqlsh:tutorialspoint> UPDATE emp SET emp_city='Delhi',emp_sal=50000
 cqlsh:tutorialspoint> select * from emp;
 ```
 
-###delete data
+###Delete data
 ```
 DELETE FROM <identifier> WHERE <condition>;
 ```
@@ -175,14 +175,14 @@ cqlsh:tutorialspoint> DELETE emp_sal FROM emp WHERE emp_id=3;
 
 cqlsh:tutorialspoint> select * from emp;
 ```
-###delete the entire row
+###Delete the entire row
 ```
 cqlsh:tutorialspoint> DELETE FROM emp WHERE emp_id=3;
 
 cqlsh:tutorialspoint> select * from emp;
 ```
 
-##index
+##Index
 ###creating/dropping a index
 ```
 CREATE INDEX <identifier> ON <tablename>
@@ -214,12 +214,14 @@ cqlsh:tutorialspoint> BEGIN BATCH
 cqlsh:tutorialspoint> select * from emp;
 ```
 
-##verification
+##Verification
 ```
 cqlsh:tutorialspoint> select * from emp;
 ```
 
-###verify the specific column
+###Verify the specific column
 ```
 cqlsh:tutorialspoint> SELECT emp_name, emp_sal from emp;
 ```
+
+
