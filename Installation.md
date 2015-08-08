@@ -56,7 +56,7 @@ sudo service cassandra stop
 sudo service cassandra restart
 ```
 
-# KairosDB
+## KairosDB
 
 ###download & unpack
 - First of all,link to the website to check the latest version : x.x.x-x
@@ -94,5 +94,5 @@ sudo service kairosdb restart
 
 ### Using UI
 ```
-firefox=>       localhost:8080
+firefox/chrome=>       localhost:8080
 ```
