@@ -1,4 +1,4 @@
-#data pouring 
+#Data Pouring 
 - a cqlsh example for pouring data from csv file
 
 ###create keyspace
