@@ -3,6 +3,9 @@
 - define a schema
 - insert data
 - execute a query
+- source
+ http://www.tutorialspoint.com/cassandra/cassandra_cqlsh.htm 
+
 
 ```
 http://www.tutorialspoint.com/cassandra/cassandra_cqlsh.htm
