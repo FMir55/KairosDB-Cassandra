@@ -125,7 +125,12 @@ gedit /opt/kairosdb/conf/kairosdb.properties &
 Modify:
 kairosdb.datastore.cassandra.host_list=fmir55-virtual-machine:9160,fmir66-virtual-machine:9160,fmir77-virtual-machine:9160
 ```
-start
+Start
+```
+sudo service kairosdb start
 ```
 
-```
+  Inet address may be changed when the terminal shell shut dwn or restart
+
+    
+  use ifconfig & gedit /etc/host to update settings
