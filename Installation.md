@@ -51,12 +51,6 @@ sudo apt-get install oracle-java7-set-default
 
 ###run Cassandra
 ```
-sudo bin/cassandra -f 
-(to run on foreground)
-(use Ctrl + C to stop)
-```
-or
-```
 sudo service cassandra start
 sudo service cassandra stop
 sudo service cassandra restart
