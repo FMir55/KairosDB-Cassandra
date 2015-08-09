@@ -78,7 +78,9 @@ uncomment as:
 
 ### Start KairosDB
 ```
-sudo ./bin/kairosdb.sh run 
+cd /opt/kairosdb/bin
+
+sudo ./kairosdb.sh run 
 (first time)
 (this will run kairosdb in foreground)
 (use Ctrl + C to stop)
