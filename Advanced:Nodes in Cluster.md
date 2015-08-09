@@ -33,8 +33,8 @@ Assumning the fmir55-virtual-machine is seed node,others are droplet nodes
 ```
 127.0.0.1       localhost
 192.168.187.136 fmir55-virtual-machine
-192.168.187.132 fmir66-virtual-machine
-192.168.187.135 fmir77-virtual-machine
+192.168.187.137 fmir66-virtual-machine
+192.168.187.138 fmir77-virtual-machine
 ```
 
 ###For Seed(Main node)
@@ -128,6 +128,8 @@ kairosdb.datastore.cassandra.host_list=fmir55-virtual-machine:9160,fmir66-virtua
 Start
 ```
 sudo service kairosdb start
+
+CHROME => localhost:8080
 ```
 
   Inet address may be changed when the terminal shell shut dwn or restart
