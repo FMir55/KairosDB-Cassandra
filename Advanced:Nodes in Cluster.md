@@ -53,7 +53,7 @@ num_tokens: 256
 seed_provider:
   - class_name: org.apache.cassandra.locator.SimpleSeedProvider
     parameters:
-         - seeds: "192.168.187.129"
+         - seeds: "192.168.187.136"
 listen_address: 
 rpc_address: fmir55-virtual-machine
 endpoint_snitch: GossipingPropertyFileSnitch
@@ -86,7 +86,7 @@ num_tokens: 256
 seed_provider:
   - class_name: org.apache.cassandra.locator.SimpleSeedProvider
     parameters:
-         - seeds: "192.168.187.129"
+         - seeds: "192.168.187.136"
 listen_address: 
 rpc_address: fmirxx-virtual-machine (or 192.168.187.xxx)
 endpoint_snitch: GossipingPropertyFileSnitch
