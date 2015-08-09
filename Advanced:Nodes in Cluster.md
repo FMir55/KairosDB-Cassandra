@@ -16,6 +16,27 @@
 - https://engineering.eventbrite.com/changing-the-ip-address-of-a-cassandra-node-with-auto_bootstrapfalse/
 - http://linux.vbird.org/linux_server/0130internet_connect.php
 
+###Warm up
+Use the following cmd to get each inet address in each node
+```
+ifconfig
+```
+
+Further more,edit the the hosts file in etc directory
+```
+gedit /etc/hosts &
+```
+
+Assumning the fmir55-virtual-machine is seed node,others are droplet nodes
+
+(First line is uneditable,or you will face problems.)
+```
+127.0.0.1       localhost
+192.168.187.129 fmir55-virtual-machine
+192.168.187.134 fmir77-virtual-machine
+```
+
+
 ###For Seed(Main node)
 
 
