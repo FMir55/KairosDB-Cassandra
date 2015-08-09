@@ -32,8 +32,9 @@ Assumning the fmir55-virtual-machine is seed node,others are droplet nodes
 (First line is uneditable,or you will face problems.)
 ```
 127.0.0.1       localhost
-192.168.187.129 fmir55-virtual-machine
-192.168.187.134 fmir77-virtual-machine
+192.168.187.136 fmir55-virtual-machine
+192.168.187.132 fmir66-virtual-machine
+192.168.187.135 fmir77-virtual-machine
 ```
 
 ###For Seed(Main node)
@@ -122,5 +123,9 @@ Verify property
 gedit /opt/kairosdb/conf/kairosdb.properties &
 
 Modify:
+kairosdb.datastore.cassandra.host_list=fmir55-virtual-machine:9160,fmir66-virtual-machine:9160,fmir77-virtual-machine:9160
+```
+start
+```
 
 ```
