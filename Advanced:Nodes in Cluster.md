@@ -36,8 +36,91 @@ Assumning the fmir55-virtual-machine is seed node,others are droplet nodes
 192.168.187.134 fmir77-virtual-machine
 ```
 
-
 ###For Seed(Main node)
+Before edit the property file in /etc/cassandra/cassandra.yaml,stop cassandra & clear data
+```
+sudo service cassandra stop
+sudo rm -rf /var/lib/cassandra/data/system/*
 
+gedit /etc/cassandra/cassandra.yaml &
+```
+
+```
+cluster_name: 'MyCassandraCluster'
+auto_bootstrap: false
+num_tokens: 256
+seed_provider:
+  - class_name: org.apache.cassandra.locator.SimpleSeedProvider
+    parameters:
+         - seeds: "192.168.187.129"
+listen_address: 
+rpc_address: fmir55-virtual-machine
+endpoint_snitch: GossipingPropertyFileSnitch
+```
+Note that
+ - cluster name must be identical between nodes
+ - Seed nodes do not bootstrap, which is the process of a new node joining an existing cluster. 
+  
+   For new clusters, the bootstrap process on seed nodes is skipped.
+
+ - By default seed parameter is set to 127.0.0.1 which means only the local node is used 
+ 
+    (it does not try to connect to other nodes on other computers.)
+
+ - rpc_address (or rpc_interface) is used for client connections,empty goes to localhost automatically  
+ - listen_address is for inter-node communication,"192.168.187.129" or fmir55-virtual-machine
 
 ###For Droplets(Rest of nodes)
+Before edit the property file in /etc/cassandra/cassandra.yaml,stop cassandra & clear data
+```
+sudo service cassandra stop
+sudo rm -rf /var/lib/cassandra/data/system/*
+
+gedit /etc/cassandra/cassandra.yaml &
+```
+
+```
+cluster_name: 'MyCassandraCluster'
+num_tokens: 256
+seed_provider:
+  - class_name: org.apache.cassandra.locator.SimpleSeedProvider
+    parameters:
+         - seeds: "192.168.187.129"
+listen_address: 
+rpc_address: fmirxx-virtual-machine (or 192.168.187.xxx)
+endpoint_snitch: GossipingPropertyFileSnitch
+```
+
+###Start and Verify
+Start
+```
+sudo service cassandra start
+```
+Check what interface the service is listening on
+```
+netstat -ntl | grep 9042
+```
+
+Note the Address with port 9042
+```
+cqlsh fmirxx-virtual-machine 
+or
+cqlsh 192.168.187.xxx 
+
+exit
+```
+
+Nodetool
+```
+nodetool status
+```
+Make sure every nodes is on the list,the launched node will show 'UN' (Up Normal)
+
+###KairosDB syn
+Verify property 
+```
+gedit /opt/kairosdb/conf/kairosdb.properties &
+
+Modify:
+
+```
