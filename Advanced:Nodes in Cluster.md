@@ -32,7 +32,7 @@ Assumning the fmir55-virtual-machine is seed node,others are droplet nodes
 (First line is uneditable,or you will face problems.)
 ```
 127.0.0.1       localhost
-192.168.187.136 fmir55-virtual-machine
+192.168.187.139 fmir55-virtual-machine
 192.168.187.137 fmir66-virtual-machine
 192.168.187.138 fmir77-virtual-machine
 ```
@@ -53,8 +53,8 @@ num_tokens: 256
 seed_provider:
   - class_name: org.apache.cassandra.locator.SimpleSeedProvider
     parameters:
-         - seeds: "192.168.187.136"
-listen_address: 
+         - seeds: "192.168.187.139"
+listen_address: fmir55-virtual-machine
 rpc_address: fmir55-virtual-machine
 endpoint_snitch: GossipingPropertyFileSnitch
 ```
@@ -86,8 +86,8 @@ num_tokens: 256
 seed_provider:
   - class_name: org.apache.cassandra.locator.SimpleSeedProvider
     parameters:
-         - seeds: "192.168.187.136"
-listen_address: 
+         - seeds: "192.168.187.139"
+listen_address: fmir55-virtual-machine
 rpc_address: fmirxx-virtual-machine (or 192.168.187.xxx)
 endpoint_snitch: GossipingPropertyFileSnitch
 ```
@@ -124,6 +124,7 @@ gedit /opt/kairosdb/conf/kairosdb.properties &
 
 Modify:
 kairosdb.datastore.cassandra.host_list=fmir55-virtual-machine:9160,fmir66-virtual-machine:9160,fmir77-virtual-machine:9160
+
 ```
 Start
 ```
