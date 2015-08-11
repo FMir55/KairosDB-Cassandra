@@ -117,13 +117,14 @@ nodetool status
 ```
 Make sure every nodes is on the list,the launched node will show 'UN' (Up Normal)
 
-###KairosDB syn
+###KairosDB syn (execute either seed or droplet nodes)
 Verify property 
 ```
 gedit /opt/kairosdb/conf/kairosdb.properties &
 
 Modify:
-kairosdb.datastore.cassandra.host_list=fmir55-virtual-machine:9160,fmir66-virtual-machine:9160,fmir77-virtual-machine:9160
+kairosdb.datastore.cassandra.host_list=fmir55-virtual-machine:9160
+(The list specifies all the "Seed" nodes,we have only one seed for example.)
 
 ```
 Start
