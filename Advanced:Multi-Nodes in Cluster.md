@@ -132,8 +132,8 @@ sudo service kairosdb start
 
 CHROME => localhost:8080
 ```
-
-  Inet address may be changed when the terminal shell shut dwn or restart
-
-    
-  use ifconfig & gedit /etc/host to update settings
+  
+Notes:
+  - Kairosdb can be exetuded perfectly only if every cassandra nodes in hosts_list in "UN" status 
+  - Inet address may be changed when the terminal shell shut dwn or restart
+  - use ifconfig & gedit /etc/host to update settings
