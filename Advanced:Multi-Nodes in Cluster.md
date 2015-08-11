@@ -135,5 +135,5 @@ CHROME => localhost:8080
   
 Notes:
   - Kairosdb can be exetuded perfectly only if every cassandra nodes in hosts_list in "UN" status 
-  - Inet address may be changed when the terminal shell shut dwn or restart
+  - Inet address may be changed when the terminal shell shut down or restart
   - use ifconfig & gedit /etc/host to update settings
