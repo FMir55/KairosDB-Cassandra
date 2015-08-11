@@ -58,7 +58,8 @@ sudo service cassandra restart
 ```
 
 ## KairosDB
-
+ - Can run without Cassandra using default KairosDB config with h2 datastore
+ 
 ###download & unpack
 - First of all,link to the website to check the latest version : x.x.x-x
 - https://github.com/kairosdb/kairosdb/releases
