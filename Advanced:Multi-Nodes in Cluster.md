@@ -140,3 +140,4 @@ Notes:
   - Kairosdb can be exetuded perfectly only if every cassandra nodes in hosts_list in "UN" status 
   - Inet address may be changed when the terminal shell shut down or restart
   - use ifconfig & gedit /etc/host to update settings
+  - 一端 node 經資料吞吐後，會同步備份於其他droplet nodes，故shut down後，仍保留資料完整性。
