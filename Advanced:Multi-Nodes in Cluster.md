@@ -124,8 +124,10 @@ gedit /opt/kairosdb/conf/kairosdb.properties &
 
 Modify:
 kairosdb.datastore.cassandra.host_list=fmir55-virtual-machine:9160
-(The list specifies all the "Seed" nodes,we have only one seed for example.)
+(For Seed)
 
+kairosdb.datastore.cassandra.host_list=fmir55-virtual-machine:9160,fmirXX-virtual-machine:9160
+(For Droplet)
 ```
 Start
 ```
